@@ -1,0 +1,15 @@
+.offerTitle {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.linkOffer {
+    color: inherit;
+    width: 80%;
+    text-decoration: none;
+}
+
+.linkOffer:hover .offerTitle {
+    text-decoration: underline;
+}

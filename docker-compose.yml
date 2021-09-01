@@ -4,8 +4,13 @@ services:
   rest-api:
     container_name: rest-api
     build: django
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:80
     volumes:
       - ./django:/app
     ports:
-      - "8000:8000"
+      - "80:80"
+  angular:
+    container_name: angular
+    build: angular
+    ports:
+      - "8080:80"

@@ -9,8 +9,6 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class OfferSerializer(serializers.ModelSerializer):
-    category = serializers.CharField(source='category.name')
-
     class Meta:
         model = Offer
         fields = '__all__'

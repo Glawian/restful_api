@@ -1,6 +1,3 @@
-*sqlite3
-__pycache__/
-
 # compiled output
 /dist
 /tmp

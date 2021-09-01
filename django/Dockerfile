@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.9.6
 
 ENV PYTHONUNBUFFERED 1
 
@@ -11,4 +11,4 @@ WORKDIR /app
 
 COPY . /app/
 
-EXPOSE 8000
+EXPOSE 80

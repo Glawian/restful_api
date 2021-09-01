@@ -1,0 +1,13 @@
+.center_items {
+    display: flex;
+    justify-content: center;
+}
+
+.headerClass {
+    background-color: rgb(185, 232, 248);
+    border-bottom: 1px black solid;
+}
+
+a {
+    text-decoration: none;
+}
