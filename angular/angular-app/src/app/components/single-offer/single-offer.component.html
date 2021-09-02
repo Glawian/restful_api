@@ -1,15 +1,8 @@
-<a [href]="offer" class="linkOffer">
-    <div class="col-12" style="margin-top: 10px; border: 1px black solid;">
-        <div class="grid" style="padding: 5px;">
+<a [href]="offer" [routerLink]="['/offer', offer.id]" class="linkOffer">
+    <div class="col-11" style="margin-top: 10px; border: 1px black solid;">
+        <div class="grid" style="padding: 5px; width: 80%;">
             <div class="col-10 offerTitle">{{ offer.title }}</div>
             <div class="col-2 offerTitle">{{ offer.price | currency }}</div>
         </div>
-        <div class="grid" style="padding: 5px;">
-            <div class="col-12">{{ offer.description }}</div>
-        </div> 
-        <div class="grid" style="padding: 5px;">
-            <div class="col-10"></div>
-            <div class="col-2">Created at: {{ offer.created_at | date: 'dd/MM/yyyy' }}</div>
-        </div> 
     </div>
 </a>

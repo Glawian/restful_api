@@ -1,0 +1,32 @@
+<p-messages></p-messages>
+
+<form [formGroup]="offer_form" (ngSubmit)="onSubmit()">
+<div class="p-fluid p-formgrid grid" style="margin-top: 10px;">
+    <div class="col-1 md-6"></div>
+    <div class="p-field col-5 md-6">
+        <label for="title">Title</label>
+        <input formControlName="title" type="text" required pInputText> 
+    </div>
+    <div class="p-field col-5 md-6">
+        <label for="price">Price $</label>
+        <input formControlName="price" type="text" required pInputText> 
+    </div>
+    <div class="col-1 md-6"></div>
+    <div class="col-1 md-6"></div>
+    <div class="p-field col-10">
+        <label for="description">Description</label>
+        <textarea formControlName="description"  type="text" rows="4" required pInputTextarea></textarea>
+    </div>
+    <div class="col-1 md-6"></div>
+    <div class="col-1 md-6"></div>
+    <div class="p-field col-5 md-3">
+        <ng-container *ngIf="categories$ | async as categories">
+        <label for="state">Category</label>
+        <p-dropdown formControlName="category" placeholder="Select" optionLabel="name" [options]="categories"></p-dropdown>
+        </ng-container>
+    </div>
+    <div class="p-field col-5 md-3" style="padding-top: 20px;">
+        <button pButton pRippl type="submit" [disabled]="offer_form.invalid" class="p-button-rounded" label="Confirm"></button>
+    </div>
+</div>
+</form>
