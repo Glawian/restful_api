@@ -21,7 +21,7 @@
     <div class="col-1 md-6"></div>
     <div class="p-field col-5 md-3">
         <ng-container *ngIf="categories$ | async as categories">
-        <label for="state">Category</label>
+        <label for="category">Category</label>
         <p-dropdown formControlName="category" placeholder="Select" optionLabel="name" [options]="categories"></p-dropdown>
         </ng-container>
     </div>

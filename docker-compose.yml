@@ -1,8 +1,8 @@
 version: "3"
 
 services:     
-  rest-api:
-    container_name: rest-api
+  django:
+    container_name: django
     build: django
     command: python manage.py runserver 0.0.0.0:80
     volumes:

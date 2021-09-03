@@ -20,6 +20,10 @@ export class ApiService {
     return this.http.get<Offer[]>(`${this.API_URL}/offer/${id}`);
   }
 
+  public filterOffers(id: number): Observable<Offer[]> {
+    return this.http.get<Offer[]>(`${this.API_URL}/category/${id}/offers`);
+  }
+
   public postOffer(new_offer: Offer) {
     return this.http.post(`${this.API_URL}/offer/`,new_offer);
   }

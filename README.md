@@ -1,5 +1,7 @@
 # Restful API
-Simple application created with Django and Angular frameworks.
+Application is developed with Django and Angular framework.
+
+User can list, filter and add new offers.
 
 ## Setup application
 In the root of the repository run following commands (Linux):
@@ -7,7 +9,7 @@ In the root of the repository run following commands (Linux):
 ```
 docker-compose build - to build images
 docker-compose up - start the containers (use -d if necessary)
-docker-compose run rest-api python manage.py createsuperuser
+docker-compose run rest-api python manage.py createsuperuser (if needed)
 docker-compose run rest-api python manage.py migrate
 ```
 

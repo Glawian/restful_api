@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
 
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
@@ -18,7 +20,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { OffersComponent } from './components/offers/offers.component';
 import { OopsComponent } from './components/oops/oops.component';
 import { SingleOfferComponent } from './components/single-offer/single-offer.component';
-import { CategoriesComponent } from './components/categories/categories.component';
 import { SingleOfferDetailsComponent } from './components/single-offer-details/single-offer-details.component';
 import { AddOfferComponent } from './components/add-offer/add-offer.component';
 
@@ -29,7 +30,6 @@ import { AddOfferComponent } from './components/add-offer/add-offer.component';
     OffersComponent,
     OopsComponent,
     SingleOfferComponent,
-    CategoriesComponent,
     SingleOfferDetailsComponent,
     AddOfferComponent
   ],
@@ -45,7 +45,8 @@ import { AddOfferComponent } from './components/add-offer/add-offer.component';
     InputTextModule,
     InputTextareaModule,
     MessagesModule,
-    MessageModule
+    MessageModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

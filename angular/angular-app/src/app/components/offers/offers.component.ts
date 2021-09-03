@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { ApiService } from '../../services/api.service';
 import { Offer, Category } from '../../interface'
@@ -13,25 +12,13 @@ import { Offer, Category } from '../../interface'
 export class OffersComponent implements OnInit {
   offers$: Observable<Offer[]>;
   categories$: Observable<Category[]>;
+  selectedFilter: string = 'none';
 
-  offer_form: FormGroup;
-
-  constructor(private apiService: ApiService, private form_builder: FormBuilder) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.getOffers();
     this.getCategories();
-    this.offer_form = this.form_builder.group({
-      title: '',
-      description: '',
-      price: '',
-      category: ''
-    });
-
-    this.offer_form.controls["title"].setValidators([Validators.required]);
-    this.offer_form.controls["description"].setValidators([Validators.required]);
-    this.offer_form.controls["price"].setValidators([Validators.required]);
-    this.offer_form.controls["category"].setValidators([Validators.required]);
   }
 
   public getOffers() {
@@ -42,14 +29,13 @@ export class OffersComponent implements OnInit {
     this.categories$ = this.apiService.getCategories();
   }
 
-  onSubmit() {
-    this.apiService.postOffer(this.offer_form.value)
-      .subscribe(
-        (response) => {
-          console.log(response);
-          this.getOffers();
-        }
-      )
+  selectChangeHandler (event: any) {
+    this.offers$ = this.apiService.filterOffers(event.value.id)
+  }
+
+  resetFilter() {
+    this.offers$ = this.apiService.getOffers();
+    this.selectedFilter = 'none';
   }
 
 }
